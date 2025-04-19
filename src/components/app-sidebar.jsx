@@ -31,24 +31,24 @@ const data = {
       
       title: "Dashboard",
       icon: LayoutDashboard,
-      link:<Link to="/dashboard" /> ,
+      link:"/dashboard" ,
       isActive: true,
       
     },
     {
       title: "Loan Request",
-      link: <Link to={"/login"}/>,
+      link:"/loan-request",
       icon: CircleDollarSignIcon,
       
     },
     {
       title: "New Loan",
-      link: "#",
+      link: "/new-loan",
       icon:HeartHandshakeIcon ,
      
     },
     {title:"Profile",
-      link:"#",
+      link:"/profile",
       icon:UserRoundPen 
     }
   ],
@@ -62,7 +62,7 @@ export function AppSidebar({
     <Sidebar className={"border-none shadow-xl/30"}  collapsible="icon" {...props}>
       
       <SidebarContent className={"bg-blue-50 outline-none shadow-amber-500"}>
-        <NavMain className={"cursor-pointer font-semibold hover:bg-blue-500 hover:text-white hover:transition hover:duration-400 text-base "} items={data.navMain} />
+        <NavMain className={`cursor-pointer font-semibold hover:bg-blue-500 hover:text-white hover:transition hover:duration-500 text-base  `} items={data.navMain} />
       </SidebarContent>
      
       <SidebarRail  />

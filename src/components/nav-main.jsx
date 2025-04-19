@@ -1,5 +1,5 @@
 "use client"
-import { Link } from "react-router";
+import { Link,NavLink } from "react-router";
 import { ChevronRight } from "lucide-react";
 
 import {
@@ -19,27 +19,27 @@ import {
 } from "@/components/ui/sidebar"
 
 export function NavMain({
-  items,className
+  items,className,
 }) {
   return (
     <SidebarGroup >
       <SidebarGroupLabel className={"text-green-500"}>EasyLoan</SidebarGroupLabel>
       <SidebarMenu>
         {items.map((item) => (
-          <Collapsible
+          <Collapsible 
             key={item.title}
             asChild
             defaultOpen={item.isActive}
             className="group/collapsible ">
-            <SidebarMenuItem >
+            <SidebarMenuItem  >
              
-                <SidebarMenuButton className={className} tooltip={item.title}>
+            <NavLink className={({ isActive }) =>
+    isActive ? "text-blue-500" : "text-black"
+  } to={item.link}> <SidebarMenuButton   className={className  }  tooltip={item.title}>
                   {item.icon && <item.icon />}
-                  {item.link}
                   <span>{item.title}</span>
-                  {/* <ChevronRight
-                    className="ml-auto transition-transform duration-200 group-data-[state=open]/collapsible:rotate-90" /> */}
-                </SidebarMenuButton>
+                </SidebarMenuButton>              </NavLink>
+
              
             </SidebarMenuItem>
           </Collapsible>
